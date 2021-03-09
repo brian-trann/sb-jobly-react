@@ -1,0 +1,10 @@
+
+.NavBar-container{
+    background-color: white;
+    border-bottom:2px solid rgba(0,0,0,0.25);
+}
+.NavBar-children{
+    margin-left: 15px;
+    margin-right: 15px;
+
+}

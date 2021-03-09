@@ -1,23 +1,30 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import CompanyCard from './CompanyCard';
+import SearchForm from './SearchForm';
+import './CompanyList.css';
 const CompanyList = ({ companies }) => {
 	// const [companiesList, setCompaniesList] = useState([])
 
 	return (
 		<React.Fragment>
-			<div>This is the CompanyList</div>
-			{companies.map((company) => (
-				<Link to={`/companies/${company.handle}`} key={company.handle}>
-					<CompanyCard company={company} />
-				</Link>
-			))}
+			<div className='container-fluid container-md CompanyList'>
+				<SearchForm />
+				{companies.map((company) => (
+					<CompanyCard
+						to={`/companies/${company.handle}`}
+						key={company.handle}
+						company={company}
+					/>
+				))}
+			</div>
 		</React.Fragment>
 	);
 };
 
 export default CompanyList;
 /**
+ * Make async call to DB. Get all companies.
+ * - Save into state?
  * For each company in the list, render a card
  *  - onClick card => /companies/:name
  */
