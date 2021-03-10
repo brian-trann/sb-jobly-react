@@ -23,7 +23,7 @@ const Routes = () => {
 			<Route exact path='/companies'>
 				<CompanyList />
 			</Route>
-			<Route exact path='/companies/:name'>
+			<Route exact path='/companies/:handle'>
 				<CompanyDetail />
 			</Route>
 			<Route exact path='/jobs'>

@@ -4,28 +4,25 @@ import './JobCard.css';
 import { Card, CardText, CardBody, CardTitle } from 'reactstrap';
 const JobCard = ({ job }) => {
 	const { id, title, salary, equity, companyHandle, companyName } = job;
-	console.log(`ID: ${id}, handle: ${companyHandle}`);
+
 	const formattedTitle = title
 		.split(' ')
 		.map((word) => word[0].toUpperCase() + word.slice(1))
 		.join(' ');
+
 	return (
-		<div className='JobCard-container'>
-			<Card className='JobCard-card'>
+		<div className='JobCard-container mx-auto  '>
+			<Card className='JobCard-card '>
 				<CardBody>
 					<CardTitle tag='h6'>
-						{formattedTitle} - <i>{companyName}</i>
+						{formattedTitle} <i>{!!companyName ? `- ${companyName}` : null}</i>
 					</CardTitle>
-					{salary ? (
-						<CardText>Salary: ${salary.toLocaleString()}</CardText>
-					) : (
-						<i>No salary</i>
-					)}
-					{!!parseFloat(equity) ? (
-						<CardText>Equity: {equity}</CardText>
-					) : (
-						<i>No equity</i>
-					)}
+					<CardText>
+						{salary ? `Salary: $${salary.toLocaleString()}` : <i>No salary</i>}
+					</CardText>
+					<CardText>
+						{!!parseFloat(equity) ? `Equity: ${equity}` : <i>No equity</i>}
+					</CardText>
 				</CardBody>
 			</Card>
 		</div>

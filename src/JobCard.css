@@ -1,9 +1,12 @@
 .JobCard-container{
     text-align: left;
-    margin:15px
+    margin:15px;
+    width: 35rem;
+    
 }
 .JobCard-container h6{
     color: #007bff;
+    
 }
 /* .JobCard-card h6:hover{
     color:#0059af;

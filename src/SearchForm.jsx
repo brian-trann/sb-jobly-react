@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-// import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-const SearchForm = () => {
+
+const SearchForm = ({ handleSearch }) => {
 	const INITIAL_STATE = { search: '' };
 	const [ formData, setFormData ] = useState(INITIAL_STATE);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(formData);
+
+		handleSearch(formData);
 		setFormData(INITIAL_STATE);
 	};
 	const handleChange = (e) => {
@@ -19,7 +20,7 @@ const SearchForm = () => {
 
 	return (
 		<React.Fragment>
-			<form className='form-inline' onSubmit={handleSubmit}>
+			<form className='form-inline SearchForm-form' onSubmit={handleSubmit}>
 				<label htmlFor='search' />
 				<input
 					type='text'

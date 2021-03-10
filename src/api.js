@@ -40,13 +40,13 @@ class JoblyApi {
 	}
 
 	/** Get all companies */
-	static async getCompanies() {
-		const res = await this.request('companies');
+	static async getCompanies(name) {
+		const res = await this.request('companies', { name });
 		return res.companies;
 	}
 	/** Get all jobs */
-	static async getJobs() {
-		const res = await this.request('jobs');
+	static async getJobs(title) {
+		const res = await this.request('jobs', { title });
 		return res.jobs;
 	}
 }
