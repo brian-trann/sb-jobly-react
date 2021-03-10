@@ -4,20 +4,18 @@ import SearchForm from './SearchForm';
 import './CompanyList.css';
 const CompanyList = ({ companies }) => {
 	// const [companiesList, setCompaniesList] = useState([])
-
+	// the search form will need to search on the BACKEND
 	return (
-		<React.Fragment>
-			<div className='container-fluid container-md CompanyList'>
-				<SearchForm />
-				{companies.map((company) => (
-					<CompanyCard
-						to={`/companies/${company.handle}`}
-						key={company.handle}
-						company={company}
-					/>
-				))}
-			</div>
-		</React.Fragment>
+		<div className='container-fluid container-md CompanyList'>
+			<SearchForm />
+			{companies.map((company) => (
+				<CompanyCard
+					to={`/companies/${company.handle}`}
+					key={company.handle}
+					company={company}
+				/>
+			))}
+		</div>
 	);
 };
 
