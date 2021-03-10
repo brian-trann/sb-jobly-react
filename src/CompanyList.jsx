@@ -3,6 +3,7 @@ import CompanyCard from './CompanyCard';
 import SearchForm from './SearchForm';
 import JoblyApi from './api';
 import useToggleState from './hooks/useToggleState';
+import Loading from './Loading';
 import './CompanyList.css';
 
 const CompanyList = () => {
@@ -22,8 +23,9 @@ const CompanyList = () => {
 	return (
 		<div className='container-fluid container-md CompanyList'>
 			<SearchForm />
+
 			{isLoading ? (
-				<p>MAKE A LOADING COMPONENT</p>
+				<Loading />
 			) : (
 				companiesList.map((company) => (
 					<CompanyCard

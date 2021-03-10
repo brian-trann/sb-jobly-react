@@ -4,6 +4,7 @@ import JobCard from './JobCard';
 import SearchForm from './SearchForm';
 import JoblyApi from './api';
 import useToggleState from './hooks/useToggleState';
+import Loading from './Loading';
 
 const JobList = () => {
 	const [ jobList, setJobList ] = useState(null);
@@ -21,11 +22,7 @@ const JobList = () => {
 	return (
 		<div className='container-fluid container-md JobList'>
 			<SearchForm />
-			{isLoading ? (
-				<p>MAKE LOADING COMPONENT </p>
-			) : (
-				jobList.map((job) => <JobCard job={job} key={job.id} />)
-			)}
+			{isLoading ? <Loading /> : jobList.map((job) => <JobCard job={job} key={job.id} />)}
 		</div>
 	);
 };

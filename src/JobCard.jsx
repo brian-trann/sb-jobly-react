@@ -4,6 +4,7 @@ import './JobCard.css';
 import { Card, CardText, CardBody, CardTitle } from 'reactstrap';
 const JobCard = ({ job }) => {
 	const { id, title, salary, equity, companyHandle, companyName } = job;
+	console.log(`ID: ${id}, handle: ${companyHandle}`);
 	const formattedTitle = title
 		.split(' ')
 		.map((word) => word[0].toUpperCase() + word.slice(1))
