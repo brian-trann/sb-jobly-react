@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
-// import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { useHistory } from 'react-router-dom';
 import './LoginForm.css';
-const LoginForm = () => {
+const LoginForm = ({ login }) => {
+	const history = useHistory();
 	const INITIAL_STATE = { username: '', password: '' };
 	const [ formData, setFormData ] = useState(INITIAL_STATE);
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log('formData: ', formData);
-		setFormData(INITIAL_STATE);
+		const res = await login(formData);
+		if (res.success) {
+			history.push('/companies');
+		}
 	};
 	const handleChange = (e) => {
 		const { name, value } = e.target;

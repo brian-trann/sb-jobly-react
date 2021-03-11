@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-// import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { useHistory } from 'react-router-dom';
 import './SignupForm.css';
-const SignupForm = () => {
+const SignupForm = ({ signup }) => {
 	const INITIAL_STATE = { username: '', password: '', firstName: '', lastName: '', email: '' };
 	const [ formData, setFormData ] = useState(INITIAL_STATE);
-
-	const handleSubmit = (e) => {
+	const history = useHistory();
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log('formData: ', formData);
-		setFormData(INITIAL_STATE);
+		const res = await signup(formData);
+		if (res.success) {
+			history.push('/companies');
+		}
 	};
 	const handleChange = (e) => {
 		const { name, value } = e.target;

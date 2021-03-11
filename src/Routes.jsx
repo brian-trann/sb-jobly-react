@@ -7,31 +7,32 @@ import CompanyList from './CompanyList';
 import CompanyDetail from './CompanyDetail';
 import JobList from './JobList';
 import Profile from './Profile';
+import PrivateRoute from './PrivateRoute';
 
-const Routes = () => {
+const Routes = ({ login, signup }) => {
 	return (
 		<Switch>
 			<Route exact path='/'>
 				<Home />
 			</Route>
 			<Route exact path='/login'>
-				<LoginForm />
+				<LoginForm login={login} />
 			</Route>
 			<Route exact path='/signup'>
-				<SignupForm />
+				<SignupForm signup={signup} />
 			</Route>
-			<Route exact path='/companies'>
+			<PrivateRoute exact path='/companies'>
 				<CompanyList />
-			</Route>
-			<Route exact path='/companies/:handle'>
+			</PrivateRoute>
+			<PrivateRoute exact path='/companies/:handle'>
 				<CompanyDetail />
-			</Route>
-			<Route exact path='/jobs'>
+			</PrivateRoute>
+			<PrivateRoute exact path='/jobs'>
 				<JobList />
-			</Route>
-			<Route exact path='/profile'>
+			</PrivateRoute>
+			<PrivateRoute exact path='/profile'>
 				<Profile />
-			</Route>
+			</PrivateRoute>
 		</Switch>
 	);
 };

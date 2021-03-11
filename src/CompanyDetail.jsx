@@ -32,10 +32,10 @@ const CompanyDetail = () => {
 		return (
 			<React.Fragment>
 				<div className='CompanyDetail-container  m-4'>
-					<div className='CompanyDetail-body container'>
+					<div className='CompanyDetail-body container pb-3'>
 						<div className='CompanyDetail-title h4'>{name}</div>
 						<div className='CompanyDetail-description lead'>{description}</div>
-						<div className='CompanyDetail-employees'>
+						<div className='CompanyDetail-employees my-1'>
 							<i>{numEmployees} employees</i>
 						</div>
 					</div>
