@@ -1,5 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import UserContext from './UserContext';
 const Home = () => {
-	return <div>This is the home splash</div>;
+	const { currentUser } = useContext(UserContext);
+
+	return (
+		<React.Fragment>
+			<div className='Home-container container'>
+				<div className='Home-jumbotron jumbotron my-5'>
+					<p className='h2'>Jobly</p>
+					<p className='lead mt-4'>
+						{!currentUser ? (
+							'All the jobs in one, convenient place.'
+						) : (
+							`Welcome back, ${currentUser.firstName}.`
+						)}{' '}
+					</p>
+				</div>
+			</div>
+		</React.Fragment>
+	);
 };
 export default Home;
