@@ -77,7 +77,7 @@ function App() {
 
 	return (
 		<BrowserRouter>
-			<UserContext.Provider value={{ currentUser }}>
+			<UserContext.Provider value={{ currentUser, setCurrentUser }}>
 				<div className='App'>
 					<NavBar logout={logout} />
 					{isLoading ? <Loading /> : <Routes login={login} signup={signup} />}

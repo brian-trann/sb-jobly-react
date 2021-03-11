@@ -34,7 +34,7 @@ const SignupForm = ({ signup }) => {
 								id='username'
 								name='username'
 								placeholder='Username'
-								value={formData.search}
+								value={formData.username}
 								onChange={handleChange}
 							/>
 						</div>
