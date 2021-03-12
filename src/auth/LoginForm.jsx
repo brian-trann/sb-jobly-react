@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './LoginForm.css';
+
+/**
+ * LoginForm Component
+ * 
+ * onSubmit => 
+ * 		- calls fn(login) from App
+ * 		- redirects to /companies
+ */
 const LoginForm = ({ login }) => {
 	const history = useHistory();
 	const INITIAL_STATE = { username: '', password: '' };

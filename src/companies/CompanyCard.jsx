@@ -2,6 +2,12 @@ import React from 'react';
 import './CompanyCard.css';
 import { Card, CardText, CardBody, CardTitle } from 'reactstrap';
 import { Link } from 'react-router-dom';
+
+/**
+ * CompanyCard Component
+ * 
+ * Renders a Company Card
+ */
 const CompanyCard = ({ company }) => {
 	const { name, description, numEmployees, handle } = company;
 

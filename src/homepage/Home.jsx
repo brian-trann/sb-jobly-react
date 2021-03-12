@@ -1,5 +1,12 @@
 import React, { useContext } from 'react';
 import UserContext from '../common/UserContext';
+
+/**
+ * Home Component
+ * 
+ * Uses context to generate a homepage for UnAuth or Auth user
+ * 
+ */
 const Home = () => {
 	const { currentUser } = useContext(UserContext);
 

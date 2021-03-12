@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './SignupForm.css';
+
+/**
+ * SignUp Component
+ * 
+ * onSubmit => 
+ * 		- calls fn(signup) from App
+ * 		- redirects to /companies
+ */
 const SignupForm = ({ signup }) => {
 	const INITIAL_STATE = { username: '', password: '', firstName: '', lastName: '', email: '' };
 	const [ formData, setFormData ] = useState(INITIAL_STATE);

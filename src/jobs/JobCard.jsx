@@ -3,6 +3,13 @@ import UserContext from '../common/UserContext';
 import './JobCard.css';
 
 import { Card, CardText, CardBody, CardTitle } from 'reactstrap';
+
+/**
+ * JobCard Component
+ * 
+ * Renders a JobCard.
+ * Users have option to apply to the job
+ */
 const JobCard = ({ job }) => {
 	const { title, salary, equity, companyName, id } = job;
 	const [ applied, setApplied ] = useState();

@@ -7,6 +7,14 @@ import useToggleState from '../hooks/useToggleState';
 import Loading from '../common/Loading';
 import NoResult from '../common/NoResult';
 
+/**
+ * JobList Component
+ * 
+ * Loads all jobs from the API. Loading Component is rendered while there is not a response
+ * 
+ * JobList includes a SearchForm
+ */
+
 const JobList = () => {
 	const [ jobList, setJobList ] = useState(null);
 	const [ isLoading, setIsLoading ] = useToggleState(true);

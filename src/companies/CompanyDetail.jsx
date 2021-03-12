@@ -5,8 +5,14 @@ import useToggleState from '../hooks/useToggleState';
 import JobCard from '../jobs/JobList';
 import { useParams } from 'react-router-dom';
 import './CompanyDetail.css';
-// will need to make a request for a specific company handle/name
-// use JobCard to display that company's jobs
+
+/**
+ * CompanyDetail Component
+ * 
+ * Loads Company details based on the URL params.
+ * 
+ * If the company has jobs, JobCard Components are rendered
+ */
 const CompanyDetail = () => {
 	const [ company, setCompany ] = useState(null);
 	const [ isLoading, setIsLoading ] = useToggleState(true);

@@ -4,6 +4,13 @@ import { Navbar, Nav, NavItem } from 'reactstrap';
 import UserContext from '../common/UserContext';
 import './NavBar.css';
 
+/**
+ * NavBar Component
+ * 
+ * - fn(logout) => logs out a user, and clears the token/user from state/localStorage
+ * - currentUser context will render authUser routes or  unAuthUser routes
+ */
+
 const NavBar = ({ logout }) => {
 	const { currentUser } = useContext(UserContext);
 

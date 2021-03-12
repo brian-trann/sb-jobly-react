@@ -3,7 +3,14 @@ import UserContext from '../common/UserContext';
 import JoblyApi from '../api';
 import Loading from '../common/Loading';
 import useToggleState from '../hooks/useToggleState';
-// import {useHistory} from 'react-router-dom'
+
+/**
+ * ProfileForm Component
+ * 
+ * Usage: A user can edit his or her profile, if given a valid password
+ * 
+ * Uses context from App Component 
+ */
 
 const ProfileForm = () => {
 	const { currentUser, setCurrentUser } = useContext(UserContext);

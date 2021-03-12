@@ -2,6 +2,12 @@ import React, { useContext } from 'react';
 import UserContext from '../common/UserContext';
 import ProfileForm from './ProfileForm';
 import './Profile.css';
+
+/**
+ * Profile Component
+ * 
+ * Uses context from App Component
+ */
 const Profile = () => {
 	const { currentUser: { username } } = useContext(UserContext);
 	return (

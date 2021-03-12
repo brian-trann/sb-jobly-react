@@ -7,6 +7,14 @@ import Loading from '../common/Loading';
 import NoResult from '../common/NoResult';
 import './CompanyList.css';
 
+/**
+ * CompanyList Component
+ * 
+ * Loads Companies from the API. Loading Component is rendered while there is not a response
+ * 
+ * CompanyList includes a SearchForm
+ */
+
 const CompanyList = () => {
 	const [ companiesList, setCompaniesList ] = useState(null);
 	const [ isLoading, setIsLoading ] = useToggleState(true);

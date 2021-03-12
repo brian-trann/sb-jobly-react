@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
 
+/**
+ * SearchForm Component
+ * 
+ * onSubmit => 
+ * 		- calls fn(handleSearch) from JobList or CompanyList component
+ */
+
 const SearchForm = ({ handleSearch }) => {
 	const INITIAL_STATE = { search: '' };
 	const [ formData, setFormData ] = useState(INITIAL_STATE);
