@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import UserContext from './UserContext';
+import UserContext from '../common/UserContext';
 import './JobCard.css';
 
 import { Card, CardText, CardBody, CardTitle } from 'reactstrap';

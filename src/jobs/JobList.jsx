@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './JobList.css';
 import JobCard from './JobCard';
-import SearchForm from './SearchForm';
-import JoblyApi from './api';
-import useToggleState from './hooks/useToggleState';
-import Loading from './Loading';
-import NoResult from './NoResult';
+import SearchForm from '../common/SearchForm';
+import JoblyApi from '../api';
+import useToggleState from '../hooks/useToggleState';
+import Loading from '../common/Loading';
+import NoResult from '../common/NoResult';
 
 const JobList = () => {
 	const [ jobList, setJobList ] = useState(null);

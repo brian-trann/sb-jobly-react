@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, Nav, NavItem } from 'reactstrap';
-import UserContext from './UserContext';
+import UserContext from '../common/UserContext';
 import './NavBar.css';
 
 const NavBar = ({ logout }) => {

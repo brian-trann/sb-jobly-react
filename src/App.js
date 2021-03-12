@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import jwt from 'jsonwebtoken';
-import NavBar from './NavBar';
-import Routes from './Routes';
-import Loading from './Loading';
+import NavBar from './routes-nav/NavBar';
+import Routes from './routes-nav/Routes';
+import Loading from './common/Loading';
 import JoblyApi from './api';
-import UserContext from './UserContext';
+import UserContext from './common/UserContext';
 import useLocalStorage from './hooks/useLocalStorage';
 import useToggleState from './hooks/useToggleState';
 import './App.css';

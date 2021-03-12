@@ -57,8 +57,6 @@ const LoginForm = ({ login }) => {
 					</form>
 				</div>
 			</div>
-
-			<pre>{JSON.stringify(formData, null, 2)}</pre>
 		</React.Fragment>
 	);
 };

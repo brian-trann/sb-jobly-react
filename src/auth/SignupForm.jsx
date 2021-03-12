@@ -92,8 +92,6 @@ const SignupForm = ({ signup }) => {
 					</form>
 				</div>
 			</div>
-
-			<pre>{JSON.stringify(formData, null, 2)}</pre>
 		</React.Fragment>
 	);
 };

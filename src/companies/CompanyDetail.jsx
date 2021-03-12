@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Loading from './Loading';
-import JoblyApi from './api';
-import useToggleState from './hooks/useToggleState';
-import JobCard from './JobCard';
+import Loading from '../common/Loading';
+import JoblyApi from '../api';
+import useToggleState from '../hooks/useToggleState';
+import JobCard from '../jobs/JobList';
 import { useParams } from 'react-router-dom';
 import './CompanyDetail.css';
 // will need to make a request for a specific company handle/name

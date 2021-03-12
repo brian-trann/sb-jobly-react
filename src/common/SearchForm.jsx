@@ -34,7 +34,6 @@ const SearchForm = ({ handleSearch }) => {
 					Submit
 				</button>
 			</form>
-			<pre>{JSON.stringify(formData, null, 2)}</pre>
 		</React.Fragment>
 	);
 };

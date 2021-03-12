@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import UserContext from './UserContext';
+import UserContext from '../common/UserContext';
 import ProfileForm from './ProfileForm';
 import './Profile.css';
 const Profile = () => {

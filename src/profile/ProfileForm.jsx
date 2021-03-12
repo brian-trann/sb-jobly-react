@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
-import UserContext from './UserContext';
-import JoblyApi from './api';
-import Loading from './Loading';
-import useToggleState from './hooks/useToggleState';
+import UserContext from '../common/UserContext';
+import JoblyApi from '../api';
+import Loading from '../common/Loading';
+import useToggleState from '../hooks/useToggleState';
 // import {useHistory} from 'react-router-dom'
 
 const ProfileForm = () => {
@@ -105,8 +105,6 @@ const ProfileForm = () => {
 							</form>
 						</div>
 					</div>
-
-					<pre>{JSON.stringify(formData, null, 2)}</pre>
 				</React.Fragment>
 			)}
 		</React.Fragment>
