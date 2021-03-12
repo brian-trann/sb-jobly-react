@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import UserContext from './UserContext';
 import './JobCard.css';
-// import {Link} from 'react-router-dom'
+
 import { Card, CardText, CardBody, CardTitle } from 'reactstrap';
 const JobCard = ({ job }) => {
-	const { id, title, salary, equity, companyHandle, companyName } = job;
+	const { title, salary, equity, companyName, id } = job;
+	const [ applied, setApplied ] = useState();
+	const { hasAppliedToJob, applyToJob } = useContext(UserContext);
 
+	useEffect(
+		() => {
+			setApplied(hasAppliedToJob(id));
+		},
+		[ id, hasAppliedToJob ]
+	);
+
+	const handleApply = async (e) => {
+		if (hasAppliedToJob(id)) return;
+		const applied = applyToJob(id);
+		if (!!applied) {
+			setApplied(true);
+		}
+	};
 	const formattedTitle = title
 		.split(' ')
 		.map((word) => word[0].toUpperCase() + word.slice(1))
@@ -23,6 +40,13 @@ const JobCard = ({ job }) => {
 					<CardText>
 						{!!parseFloat(equity) ? `Equity: ${equity}` : <i>No equity</i>}
 					</CardText>
+					<button
+						className='btn btn-sm btn-outline-info float-right'
+						onClick={handleApply}
+						disabled={applied}
+					>
+						{applied ? 'Applied' : 'Apply'}
+					</button>
 				</CardBody>
 			</Card>
 		</div>

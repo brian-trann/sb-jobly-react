@@ -18,7 +18,6 @@ const CompanyDetail = () => {
 				const company = await JoblyApi.getCompany(handle);
 				setCompany(company);
 				setIsLoading((status) => !status);
-				console.log(company);
 			}
 			getCompany();
 		},

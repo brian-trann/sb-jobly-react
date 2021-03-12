@@ -10,7 +10,7 @@ import './CompanyList.css';
 const CompanyList = () => {
 	const [ companiesList, setCompaniesList ] = useState(null);
 	const [ isLoading, setIsLoading ] = useToggleState(true);
-	// the search form will need to search on the BACKEND
+
 	useEffect(() => {
 		async function getCompanies() {
 			const companies = await JoblyApi.getCompanies();
